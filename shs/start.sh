@@ -21,6 +21,7 @@ then
            ./dx.sh
            ./relatorio-concat.sh
            ./relatorio.sh
+           ./clear-cache.sh
            echo `date '+%d%m%Y'` > ~/pontos/arquivos/rodou.txt
 
    else
