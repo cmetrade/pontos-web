@@ -4,9 +4,7 @@ describe('CME', function (){
 
     it('capturar dados cme yahoo', function(){
        
-        
-        //cy.visit('https://www.cmegroup.com/markets/fx/emerging-market/brazilian-real.quotes.html#venue=globex', {   headers: {     "Accept-Encoding": "gzip, deflate"   } }, { timeout: 80000 })
-          cy.visit('https://br.financas.yahoo.com/quote/F*6L.CME/history/')
+       cy.visit('https://br.financas.yahoo.com/quote/F*6L.CME/history/')
 
             // open
             cy.get('.BdT > :nth-child(2) > span').then(function(text1){
