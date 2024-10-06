@@ -2,8 +2,8 @@
 cd ~/pontos/
 mv cypress/e2e/* cypress/
 mv cypress/cme.cy.js cypress/e2e/
-cp package.json package.json.bkp
-cp package-cme.json package.json
+#cp package.json package.json.bkp
+#cp package-cme.json package.json
 
 i=1
 
