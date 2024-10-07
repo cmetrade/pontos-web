@@ -16,7 +16,6 @@ then
            ./ptax-futuro.sh
            ./cupom.sh
            ./usd-brl.sh
-           ./cme-abertura.sh
            ./cme.sh
            ./xau.sh
            ./dx.sh

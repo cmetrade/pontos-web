@@ -12,9 +12,7 @@ do
         npm start
         if [ "$?" == '0' ]
            then
-           if [ -s "arquivos/cme-open.txt" ]; then
-                touch arquivos/cme.txt
-                python3 pys/cme-abertura.py
+           if [ -s "arquivos/cme-high.txt" ]; then
                 python3 pys/cme-high.py
                 python3 pys/cme-low.py
            break
