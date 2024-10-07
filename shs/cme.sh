@@ -1,9 +1,8 @@
 #!/bin/bash
-cd ~/pontos/
-mv cypress/e2e/* cypress/
+cd ~/pontos
+mv cypress/e2e/* ../
 mv cypress/cme.cy.js cypress/e2e/
-#cp package.json package.json.bkp
-#cp package-cme.json package.json
+
 
 i=1
 
@@ -18,15 +17,11 @@ do
                 python3 pys/cme-abertura.py
                 python3 pys/cme-high.py
                 python3 pys/cme-low.py
-                cp package.json package-cme.json
-                cp package.json.bkp package.json
            break
            fi
         fi
 echo "$i tentativa(s)"
 ((i++))
-cp package.json package-cme.json
-cp package.json.bkp package.json
 done
 
 echo "$i" >  logs/cme.log

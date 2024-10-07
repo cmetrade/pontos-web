@@ -4,22 +4,16 @@ describe('CME', function (){
 
     it('capturar dados cme yahoo', function(){
        
-       cy.visit('https://br.financas.yahoo.com/quote/F*6L.CME/history/')
-
-            // open
-            cy.get('.BdT > :nth-child(2) > span').then(function(text1){
-            cy.log(text1.text())
-            cy.writeFile('arquivos/cme-open.txt', text1.text())
-            })
-            
+      cy.visit('https://in.tradingview.com/symbols/CME-6L1!/contracts/')
+        
             //high
-            cy.get('.BdT > :nth-child(3) > span').then(function(text2){
+            cy.get('[data-rowkey="CME:6LX2024"] > :nth-child(6)').then(function(text2){
             cy.log(text2.text())
             cy.writeFile('arquivos/cme-high.txt', text2.text())
             })
 
             //low
-            cy.get('.BdT > :nth-child(4) > span').then(function(text3){
+            cy.get('[data-rowkey="CME:6LX2024"] > :nth-child(7)').then(function(text3){
             cy.log(text3.text())
             cy.writeFile('arquivos/cme-low.txt', text3.text())
             })

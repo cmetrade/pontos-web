@@ -4,8 +4,6 @@ import os
 with open("arquivos/cme-open.txt", "r") as arquivo:
         x = arquivo.read()
 
-x = float(x.replace('.','').replace(',','.'))
-
 var1 = float(x)
 number = 1 / var1
 result = round(number, 3) 
