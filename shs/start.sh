@@ -19,6 +19,8 @@ then
            ./cme.sh
            ./xau.sh
            ./dx.sh
+           echo > arquivos/ultimavez.txt
+           echo `date +%d/%m--%H:%M` >>arquivos/ultimavez.txt 
            ./relatorio-concat.sh
            ./relatorio.sh
            ./clear-cache.sh
