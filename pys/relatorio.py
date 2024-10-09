@@ -2,7 +2,7 @@ import pandas as pd
 import time
 import os
 
-with open("logs/relatorio.log", "r") as arquivo:
+with open("arquivos/relatozio.txt", "r") as arquivo:
         result = arquivo.read()
 print(result)
 import requests

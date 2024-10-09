@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-describe('WDO - fechamento D -1', function (){
-    it('capturar dados de fechamento wdo', function(){
+describe('WDO - fechamento D -2', function (){
+    it('capturar dados de fechamento wdo -D2', function(){
         const dayjs = require('dayjs')
         const mes = dayjs().format('M')
         const ano = dayjs().format('YY')
