@@ -18,16 +18,19 @@
             margin: 0;
             padding: 20px;
         }
+
         h1 {
             text-align: center;
             color: #4CAF50;
         }
+
         .file-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         .file-card {
             background-color: rgb(2, 2, 2);
             border: 1px solid #ddd;
@@ -36,10 +39,12 @@
             width: 300px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .file-card h3 {
             margin-top: 0;
             color: #4CAF50;
         }
+
         pre {
             background-color: #f9f9f9;
             padding: 10px;
@@ -47,11 +52,29 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
+
+        /* Small box in the top left corner */
+        .top-left-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 110px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* Allows scrolling if content is large */
+        }
     </style>
 </head>
 <body>
 
-    
+    <!-- Small box in the top left corner -->
+    <div class="top-left-box" id="top-left-box">
+        <!-- Content will be injected here -->
+    </div>
+
     <div class="file-container" id="file-container">
         <!-- Content will be injected here -->
     </div>
@@ -60,18 +83,32 @@
        const files = [
     "arquivos/maisum.txt", "arquivos/menosum.txt", "arquivos/ptax-ptaxfut.txt", 
     "arquivos/cupom2.txt", "arquivos/usd-brl.txt",  "arquivos/cme-alta.txt","arquivos/cme-baixa.txt", 
-    "arquivos/xau-alta.txt", "arquivos/xau-baixa.txt", "arquivos/dx-openn.txt", "arquivos/dx-alta.txt","arquivos/dx-baixa.txt"
+    "arquivos/xau-alta.txt", "arquivos/xau-baixa.txt", "arquivos/dx-openn.txt", "arquivos/dx-alta.txt","arquivos/dx-baixa.txt",
+    "logs/relatorio.log"
 ];
 
 const customLabels = [
     "MAIS UM", "MENOS UM", "PTAX + FUTURO",
-    "CUPOM", "USD-BRL", "CME - ABERTURA ", "CME - BAIXA", "CME - ALTA", "XAU-MAX",
-    "XAU-MIN", "DX - ABERTURA", "DX - MAX", "DX - MAX",
-    "DX - MIN", "Supplier Contracts", "Legal Documents", "Financial Summary"
+    "CUPOM", "USD-BRL", "CME - BAIXA", "CME - ALTA", "XAU-MAX",
+    "XAU-MIN", "DX - ABERTURA", "DX - MAX", "DX - MIN",
+    "RELATORIO"
 ];
 
 const fileContainer = document.getElementById('file-container');
 
+// Fetch and display content in the top-left box
+const topLeftBox = document.getElementById('top-left-box');
+fetch('arquivos/data.txt')
+    .then(response => response.text())
+    .then(data => {
+        topLeftBox.textContent = data;
+    })
+    .catch(error => {
+        console.error('Error loading file for top-left box:', error);
+        topLeftBox.textContent = 'Error loading content';
+    });
+
+// Load other files into file cards
 files.forEach((file, index) => {
     fetch(file)
         .then(response => response.text())
