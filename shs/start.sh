@@ -19,10 +19,9 @@ then
            ./cme.sh
            ./xau.sh
            ./dx.sh
-           echo > arquivos/ultimavez.txt
-           echo `date +%d/%m--%H:%M` >>arquivos/ultimavez.txt 
            ./relatorio-concat.sh
            ./relatorio.sh
+           ./data.sh
            ./clear-cache.sh
            echo `date '+%d%m%Y'` > ~/pontos/arquivos/rodou.txt
 

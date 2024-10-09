@@ -1,5 +1,5 @@
 #  Instalação da aplicação 
-cd pontos; 
+cd ~./pontos; 
 rm -rf node_modules; 
 sudo apt-get install curl -y; 
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - ; 
